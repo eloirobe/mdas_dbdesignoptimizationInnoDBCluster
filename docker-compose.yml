@@ -1,0 +1,54 @@
+version: '3.1'
+
+services:
+
+  db1:
+    image: mysql/mysql-server:latest
+    container_name: db1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_HOST: '%'
+      CONTAINER_NUMBER: 1
+    volumes:
+      - ./datadir:/opt/datadir
+    ports:
+      - 3306:3306
+    hostname: db1
+    networks:
+      - mdasnet
+
+  db2:
+    image: mysql/mysql-server:latest
+    container_name: db2
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_HOST: '%'
+      CONTAINER_NUMBER: 2
+    volumes:
+      - ./datadir:/opt/datadir
+    ports:
+      - 3307:3306
+    hostname: db2
+    networks:
+      - mdasnet
+
+  db3:
+    image: mysql/mysql-server:latest
+    container_name: db3
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      CONTAINER_NUMBER: 3
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - ./datadir:/opt/datadir
+    ports:
+      - 3308:3306
+    hostname: db3
+    networks:
+      - mdasnet
+
+networks:
+  mdasnet:
