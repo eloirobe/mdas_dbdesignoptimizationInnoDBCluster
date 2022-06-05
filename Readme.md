@@ -63,6 +63,6 @@ var cluster = dba.getCluster('testCluster')
 
 
 ```bash
-docker run -e MYSQL_HOST=db1 -e MYSQL_PORT=3306 -e MYSQL_USER=root -e MYSQL_PASSWORD=example -e MYSQL_INNODB_CLUSTER_MEMBERS=3 --network=mdasbbdddisenoyoptimizacioninnodbcluster_mdasnet -p 6446:6446 -p 6447:6447 -p 6448:6448 -p 6449:6449 -p 8443:8443  -ti mysql/mysql-router 
+docker run -e MYSQL_HOST=db1 -e MYSQL_PORT=3306 -e MYSQL_USER=root -e MYSQL_PASSWORD=example -e MYSQL_INNODB_CLUSTER_MEMBERS=3 --network=mdas_dbdesignoptimizationinnodbcluster_mdasnet -p 6446:6446 -p 6447:6447 -p 6448:6448 -p 6449:6449 -p 8443:8443  -ti mysql/mysql-router 
 ```
 
