@@ -61,8 +61,15 @@ var cluster = dba.getCluster('testCluster')
 
 ## MySQL Router
 
+Iniciar el MySQL Router
 
 ```bash
 docker run -e MYSQL_HOST=db1 -e MYSQL_PORT=3306 -e MYSQL_USER=root -e MYSQL_PASSWORD=example -e MYSQL_INNODB_CLUSTER_MEMBERS=3 --network=mdasbbdddisenoyoptimizacioninnodbcluster_mdasnet -p 6446:6446 -p 6447:6447 -p 6448:6448 -p 6449:6449 -p 8443:8443  -ti mysql/mysql-router 
 ```
 
+## Para conectarse al MySQL Router se puede hacer con MySQL Workbench u otro programa o con este comando:
+```
+docker run -v #YOURDIRECTORYEMPLOYEESDB#:/opt/test_db  -w /opt/test_db/ --name mdasconnectionmysql --net=host -it --rm mysql:oracle mysql -h127.0.0.1 -P6446  -uroot -p
+
+```
+Donde test_db es el directorio donde se encuentra la DB para importar
